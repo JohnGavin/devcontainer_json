@@ -11,15 +11,42 @@
             "packages": "libudunits2-dev,libxtst6,libxt6,libmagick++-dev"
         },
         "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-            "packages": "github::rstudio/renv,tidyverse,here,httpgd,RcppEigen,rstan"
+            "packages": "github::rstudio/renv,tidyverse,here,httpgd,greta"
+            // RcppEigen,rstan
         }
     },
     "customizations": {
         "vscode": {
-            "extensions": ["mechatroner.rainbow-csv"]
-        },
-        "codespaces": {
-            "openFiles": ["README.md"]
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"reditorsupport.r",
+				"rdebugger.r-debugger",
+                "mechatroner.rainbow-csv"
+			],
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"r.rterm.linux": "/usr/local/bin/radian",
+				"r.bracketedPaste": true,
+				"r.plot.useHttpgd": true,
+				"[r]": {
+					"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
+				}
+            },
+            "codespaces": {
+                "openFiles": ["README.md"]
+            }
         }
-    }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"postCreateCommand": "R --version",
+	// https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/common.md#speeding-up-the-command-prompt-in-large-repositories
+	"postCreateCommand": " git config codespaces-theme.hide-status 1 && echo 'library(tidyverse) ' | R --vanilla --no-save "
+	// "postCreateCommand": "git config codespaces-theme.hide-status 1 && sudo service dbus --full-restart && r -i -p -l 'tidyverse' "
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	, "remoteUser": "rstudio"
+
 }
