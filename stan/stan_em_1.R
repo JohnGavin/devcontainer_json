@@ -1,7 +1,9 @@
 library("rstan")
-options(mc.cores=1)
+options(auto_write = FALSE, mc.cores = 1)
+options()$brms.backend ; options()$auto_write ; options()$mc.cores ; options()$bspm.sudo
+
 # Simulating some data
-n     = 100
+n     = 10
 y     = rnorm(n,1.6,0.2)
 
 # Running stan code
