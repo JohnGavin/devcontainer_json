@@ -14,8 +14,7 @@
         //},
         //"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
         //    "packages": "github::rstudio/renv,tidyverse,here,httpgd,greta"
-            // RcppEigen,rstan
-        //}
+        // RcppEigen,rstan
     },
     "customizations": {
         "vscode": {
