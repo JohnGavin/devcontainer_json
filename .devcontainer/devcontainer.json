@@ -47,11 +47,21 @@
 			],
 			// Set *default* container specific settings.json values on container create.
 		"settings": { 
+			"terminal.integrated.profiles.linux": {
+				"fish": {
+					"path": "/usr/bin/fish"
+				}
+			},
+			//"terminal.integrated.defaultProfile.linux": "fish",	
 			"r.rterm.linux": "/usr/local/bin/radian",
 			"r.bracketedPaste": true,
             "r.alwaysUseActiveTerminal": true,
             "r.sessionWatcher": true,
 			"r.plot.useHttpgd": true,
+			"editor.wordWrap": "on",
+			"editor.tabSize": 2,
+			"editor.bracketPairColorization.enabled": true,
+			"editor.guides.bracketPairs": "active",		
 			"[r]": {
 				"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
 			}
@@ -67,7 +77,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "R --version",
 	// https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/common.md#speeding-up-the-command-prompt-in-large-repositories
-	"postCreateCommand": " git config codespaces-theme.hide-status 1 && echo 'library(tidyverse) ' | R --vanilla --no-save "
+	"postCreateCommand": " git config codespaces-theme.hide-status 1 && echo 'version ; library(tidyverse) ' | R -q --no-save "
 	// "postCreateCommand": "git config codespaces-theme.hide-status 1 && sudo service dbus --full-restart && r -i -p -l 'tidyverse' "
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
