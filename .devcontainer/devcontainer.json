@@ -1,7 +1,9 @@
 // https://jamesgoldie.dev/writing/dev-containers-in-r/
 {
     "name": "R (rocker/r-ver base)",
-    "image": "ghcr.io/jbris/stan-cmdstanr-docker:latest",
+    // https://hub.docker.com/repository/docker/ttmmghmm/brms_stantargets/general
+    "image": "hub.docker.com/repository/docker/ttmmghmm/brms_stantargets:latest",
+    // "image": "ghcr.io/jbris/stan-cmdstanr-docker:latest",
     // "image": "ghcr.io/rocker-org/devcontainer/tidyverse",
     // https://github.com/rocker-org/devcontainer-images/pkgs/container/devcontainer%2Ftidyverse
     // "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.3",
