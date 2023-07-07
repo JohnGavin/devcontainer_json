@@ -1,0 +1,5 @@
+library(targets)
+library(stantargets)
+path <- tempfile(pattern = "", fileext = ".stan")
+tar_stan_example_file(path = path)
+list(ans = example(stan_model, package = "rstan", run.dontrun = TRUE))

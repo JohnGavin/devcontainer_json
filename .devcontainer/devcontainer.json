@@ -78,7 +78,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "R --version",
 	// https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/common.md#speeding-up-the-command-prompt-in-large-repositories
-	"postCreateCommand": " git config codespaces-theme.hide-status 1 && echo 'version ; library(tidyverse) ' | R -q --no-save "
+	"postCreateCommand": " git config codespaces-theme.hide-status 1 && lsb_release -a && service --status-all && echo 'version$version.string' | R -q --no-save "
 	// "postCreateCommand": "git config codespaces-theme.hide-status 1 && sudo service dbus --full-restart && r -i -p -l 'tidyverse' "
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
