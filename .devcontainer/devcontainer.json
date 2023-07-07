@@ -2,44 +2,42 @@
 {
     "name": "R (rocker/r-ver base)",
     // https://hub.docker.com/repository/docker/ttmmghmm/brms_stantargets/general
-    "image": "hub.docker.com/r/ttmmghmm/brms_stantargets",
-    //"image": "hub.docker.com/repository/docker/ttmmghmm/brms_stantargets:latest",
-    // "image": "ghcr.io/jbris/stan-cmdstanr-docker:latest",
+    "image": "ttmmghmm/brms_stantargets:latest",
     // "image": "ghcr.io/rocker-org/devcontainer/tidyverse",
     // https://github.com/rocker-org/devcontainer-images/pkgs/container/devcontainer%2Ftidyverse
     // "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.3",
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:1": {
-			"installZsh": "true",
-			"username": "rstudio",
-			"uid": "1000",
-			"gid": "1000",
-			"upgradePackages": "true"
-		},
-        "ghcr.io/rocker-org/devcontainer-features/r-rig:0": {
-			"version": "none",
-			"vscodeRSupport": "full",
-			"installDevTools": true,
-			"installRMarkdown": true,
-			"installRadian": true,
-			"installVscDebugger": true
-		},
-        "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
-            "version": "latest"
-        },
-        //"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-        //    "packages": "libudunits2-dev,libxtst6,libxt6,libmagick++-dev"
-        //},
-        //ghcr.io/rocker-org/devcontainer-features/r-rig
-        "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-            "packages": "httpgd,languageserver"
-        }
-        //    "packages": "github::rstudio/renv,tidyverse,here,httpgd,greta"
-        // RcppEigen,rstan
-    },
-    "overrideFeatureInstallOrder":[
-		"ghcr.io/devcontainers/features/common-utils"
-	],
+    // "features": {
+    //     "ghcr.io/devcontainers/features/common-utils:1": {
+	// 		"installZsh": "true",
+	// 		"username": "rstudio",
+	// 		"uid": "1000",
+	// 		"gid": "1000",
+	// 		"upgradePackages": "true"
+	// 	},
+    //     "ghcr.io/rocker-org/devcontainer-features/r-rig:0": {
+	// 		"version": "none",
+	// 		"vscodeRSupport": "full",
+	// 		"installDevTools": true,
+	// 		"installRMarkdown": true,
+	// 		"installRadian": true,
+	// 		"installVscDebugger": true
+	// 	},
+    //     "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+    //         "version": "latest"
+    //     },
+    //     //"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+    //     //    "packages": "libudunits2-dev,libxtst6,libxt6,libmagick++-dev"
+    //     //},
+    //     //ghcr.io/rocker-org/devcontainer-features/r-rig
+    //     "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+    //         "packages": "httpgd,languageserver"
+    //     }
+    //     //    "packages": "github::rstudio/renv,tidyverse,here,httpgd,greta"
+    //     // RcppEigen,rstan
+    // },
+    // "overrideFeatureInstallOrder":[
+	// 	"ghcr.io/devcontainers/features/common-utils"
+	// ],
     "customizations": {
         "vscode": {
 		// Add the IDs of extensions you want installed when the container is created.
